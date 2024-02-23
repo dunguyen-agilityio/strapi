@@ -368,13 +368,25 @@ export interface ApiArticleArticle extends Schema.CollectionType {
     singularName: 'article';
     pluralName: 'articles';
     displayName: 'article';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     title: Attribute.String;
-    image: Attribute.Media;
+    image: Attribute.String;
+    des: Attribute.Text;
+    content: Attribute.Text;
+    img: Attribute.Media;
+    users_permissions_user: Attribute.Relation<
+      'api::article.article',
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
+    like: Attribute.BigInteger;
+    share: Attribute.BigInteger;
+    view: Attribute.BigInteger;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

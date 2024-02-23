@@ -4,7 +4,8 @@
   "info": {
     "singularName": "article",
     "pluralName": "articles",
-    "displayName": "article"
+    "displayName": "article",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,6 +16,15 @@
       "type": "string"
     },
     "image": {
+      "type": "string"
+    },
+    "des": {
+      "type": "text"
+    },
+    "content": {
+      "type": "text"
+    },
+    "img": {
       "allowedTypes": [
         "images",
         "files",
@@ -23,6 +33,20 @@
       ],
       "type": "media",
       "multiple": true
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "like": {
+      "type": "biginteger"
+    },
+    "share": {
+      "type": "biginteger"
+    },
+    "view": {
+      "type": "biginteger"
     }
   }
 }
