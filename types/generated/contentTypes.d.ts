@@ -375,10 +375,9 @@ export interface ApiArticleArticle extends Schema.CollectionType {
   };
   attributes: {
     title: Attribute.String;
-    image: Attribute.String;
     des: Attribute.Text;
     content: Attribute.Text;
-    img: Attribute.Media;
+    image: Attribute.Media;
     authors: Attribute.Relation<
       'api::article.article',
       'manyToMany',

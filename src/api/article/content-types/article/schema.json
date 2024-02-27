@@ -15,16 +15,13 @@
     "title": {
       "type": "string"
     },
-    "image": {
-      "type": "string"
-    },
     "des": {
       "type": "text"
     },
     "content": {
       "type": "text"
     },
-    "img": {
+    "image": {
       "type": "media",
       "multiple": true,
       "required": false,
