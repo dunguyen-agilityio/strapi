@@ -362,126 +362,34 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiArticleArticle extends Schema.CollectionType {
-  collectionName: 'articles';
+export interface ApiProductProduct extends Schema.CollectionType {
+  collectionName: 'products';
   info: {
-    singularName: 'article';
-    pluralName: 'articles';
-    displayName: 'article';
+    singularName: 'product';
+    pluralName: 'products';
+    displayName: 'Product';
     description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    title: Attribute.String;
-    des: Attribute.Text;
-    content: Attribute.Text;
-    image: Attribute.Media;
-    authors: Attribute.Relation<
-      'api::article.article',
-      'manyToMany',
-      'plugin::users-permissions.user'
-    >;
-    like: Attribute.BigInteger;
-    share: Attribute.BigInteger;
-    view: Attribute.BigInteger;
-    comments: Attribute.Relation<
-      'api::article.article',
-      'oneToMany',
-      'api::comment.comment'
-    >;
-    category: Attribute.Relation<
-      'api::article.article',
-      'manyToOne',
-      'api::category.category'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::article.article',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::article.article',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiCategoryCategory extends Schema.CollectionType {
-  collectionName: 'categories';
-  info: {
-    singularName: 'category';
-    pluralName: 'categories';
-    displayName: 'category';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
     name: Attribute.String;
-    articles: Attribute.Relation<
-      'api::category.category',
-      'oneToMany',
-      'api::article.article'
-    >;
+    price: Attribute.Decimal;
+    quantity: Attribute.Integer;
+    images: Attribute.Media;
+    description: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::category.category',
+      'api::product.product',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::category.category',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiCommentComment extends Schema.CollectionType {
-  collectionName: 'comments';
-  info: {
-    singularName: 'comment';
-    pluralName: 'comments';
-    displayName: 'comment';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    message: Attribute.Text;
-    article: Attribute.Relation<
-      'api::comment.comment',
-      'manyToOne',
-      'api::article.article'
-    >;
-    users_permissions_user: Attribute.Relation<
-      'api::comment.comment',
-      'manyToOne',
-      'plugin::users-permissions.user'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::comment.comment',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::comment.comment',
+      'api::product.product',
       'oneToOne',
       'admin::user'
     > &
@@ -894,17 +802,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
     >;
     firstName: Attribute.String;
     lastName: Attribute.String;
-    userName: Attribute.String;
-    articles: Attribute.Relation<
-      'plugin::users-permissions.user',
-      'manyToMany',
-      'api::article.article'
-    >;
-    comments: Attribute.Relation<
-      'plugin::users-permissions.user',
-      'oneToMany',
-      'api::comment.comment'
-    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -932,9 +829,7 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::article.article': ApiArticleArticle;
-      'api::category.category': ApiCategoryCategory;
-      'api::comment.comment': ApiCommentComment;
+      'api::product.product': ApiProductProduct;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;

@@ -70,21 +70,6 @@
     },
     "lastName": {
       "type": "string"
-    },
-    "userName": {
-      "type": "string"
-    },
-    "articles": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::article.article",
-      "mappedBy": "authors"
-    },
-    "comments": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::comment.comment",
-      "mappedBy": "users_permissions_user"
     }
   }
 }
