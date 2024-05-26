@@ -76,6 +76,12 @@
       "relation": "oneToOne",
       "target": "api::cart.cart",
       "mappedBy": "users_permissions_user"
+    },
+    "wish_list": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::wish-list.wish-list",
+      "mappedBy": "users_permissions_user"
     }
   }
 }
