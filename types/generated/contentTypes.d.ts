@@ -903,6 +903,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'manyToOne',
       'api::wish-list.wish-list'
     >;
+    discount: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
