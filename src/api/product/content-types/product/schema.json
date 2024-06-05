@@ -35,12 +35,6 @@
     "description": {
       "type": "richtext"
     },
-    "categories": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::category.category",
-      "mappedBy": "products"
-    },
     "sizes": {
       "type": "relation",
       "relation": "manyToMany",
@@ -61,6 +55,19 @@
     },
     "discount": {
       "type": "integer"
+    },
+    "categories": {
+      "type": "enumeration",
+      "enum": [
+        "Computer",
+        "Camera",
+        "Phone",
+        "GamePad",
+        "HeadPhone",
+        "SmartWatch",
+        "Shoes",
+        "Clothes"
+      ]
     }
   }
 }

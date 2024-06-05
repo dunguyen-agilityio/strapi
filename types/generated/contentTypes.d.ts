@@ -838,11 +838,6 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
   attributes: {
     name: Attribute.String;
-    products: Attribute.Relation<
-      'api::category.category',
-      'manyToMany',
-      'api::product.product'
-    >;
     sizes: Attribute.Relation<
       'api::category.category',
       'manyToMany',
@@ -883,11 +878,6 @@ export interface ApiProductProduct extends Schema.CollectionType {
     quantity: Attribute.Integer;
     images: Attribute.Media;
     description: Attribute.RichText;
-    categories: Attribute.Relation<
-      'api::product.product',
-      'manyToMany',
-      'api::category.category'
-    >;
     sizes: Attribute.Relation<
       'api::product.product',
       'manyToMany',
@@ -904,6 +894,18 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'api::wish-list.wish-list'
     >;
     discount: Attribute.Integer;
+    categories: Attribute.Enumeration<
+      [
+        'Computer',
+        'Camera',
+        'Phone',
+        'GamePad',
+        'HeadPhone',
+        'SmartWatch',
+        'Shoes',
+        'Clothes'
+      ]
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
