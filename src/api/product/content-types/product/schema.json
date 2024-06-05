@@ -56,7 +56,7 @@
     "discount": {
       "type": "integer"
     },
-    "categories": {
+    "category": {
       "type": "enumeration",
       "enum": [
         "Computer",

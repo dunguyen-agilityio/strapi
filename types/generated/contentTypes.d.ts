@@ -894,7 +894,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'api::wish-list.wish-list'
     >;
     discount: Attribute.Integer;
-    categories: Attribute.Enumeration<
+    category: Attribute.Enumeration<
       [
         'Computer',
         'Camera',
