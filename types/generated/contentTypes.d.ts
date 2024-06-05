@@ -903,7 +903,8 @@ export interface ApiProductProduct extends Schema.CollectionType {
         'HeadPhone',
         'SmartWatch',
         'Shoes',
-        'Clothes'
+        'Clothes',
+        'NewArrival'
       ]
     >;
     createdAt: Attribute.DateTime;
