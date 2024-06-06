@@ -14,15 +14,15 @@
   "attributes": {
     "products": {
       "type": "relation",
-      "relation": "manyToMany",
+      "relation": "oneToMany",
       "target": "api::product.product",
-      "mappedBy": "wish_lists"
+      "mappedBy": "wish_list"
     },
     "users_permissions_user": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "oneToOne",
       "target": "plugin::users-permissions.user",
-      "inversedBy": "wish_lists"
+      "inversedBy": "wish_list"
     }
   }
 }

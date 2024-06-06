@@ -77,9 +77,9 @@
       "target": "api::cart.cart",
       "mappedBy": "users_permissions_user"
     },
-    "wish_lists": {
+    "wish_list": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "oneToOne",
       "target": "api::wish-list.wish-list",
       "mappedBy": "users_permissions_user"
     }

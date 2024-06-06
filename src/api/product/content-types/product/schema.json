@@ -64,9 +64,9 @@
         "NewArrival"
       ]
     },
-    "wish_lists": {
+    "wish_list": {
       "type": "relation",
-      "relation": "manyToMany",
+      "relation": "manyToOne",
       "target": "api::wish-list.wish-list",
       "inversedBy": "products"
     }
