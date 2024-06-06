@@ -4,7 +4,8 @@
   "info": {
     "singularName": "wish-list",
     "pluralName": "wish-lists",
-    "displayName": "WishList"
+    "displayName": "WishList",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -13,15 +14,15 @@
   "attributes": {
     "products": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::product.product",
-      "mappedBy": "wish_list"
+      "mappedBy": "wish_lists"
     },
-    "users_permissions_user": {
+    "users_permissions_users": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "plugin::users-permissions.user",
-      "inversedBy": "wish_list"
+      "mappedBy": "wish_list"
     }
   }
 }
