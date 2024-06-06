@@ -18,11 +18,11 @@
       "target": "api::product.product",
       "mappedBy": "wish_lists"
     },
-    "users_permissions_users": {
+    "users_permissions_user": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
-      "mappedBy": "wish_list"
+      "inversedBy": "wish_lists"
     }
   }
 }

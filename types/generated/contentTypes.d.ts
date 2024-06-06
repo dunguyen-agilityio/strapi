@@ -772,9 +772,9 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'oneToOne',
       'api::cart.cart'
     >;
-    wish_list: Attribute.Relation<
+    wish_lists: Attribute.Relation<
       'plugin::users-permissions.user',
-      'manyToOne',
+      'oneToMany',
       'api::wish-list.wish-list'
     >;
     createdAt: Attribute.DateTime;
@@ -974,9 +974,9 @@ export interface ApiWishListWishList extends Schema.CollectionType {
       'manyToMany',
       'api::product.product'
     >;
-    users_permissions_users: Attribute.Relation<
+    users_permissions_user: Attribute.Relation<
       'api::wish-list.wish-list',
-      'oneToMany',
+      'manyToOne',
       'plugin::users-permissions.user'
     >;
     createdAt: Attribute.DateTime;

@@ -77,11 +77,11 @@
       "target": "api::cart.cart",
       "mappedBy": "users_permissions_user"
     },
-    "wish_list": {
+    "wish_lists": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "oneToMany",
       "target": "api::wish-list.wish-list",
-      "inversedBy": "users_permissions_users"
+      "mappedBy": "users_permissions_user"
     }
   }
 }
