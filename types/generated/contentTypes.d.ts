@@ -817,7 +817,7 @@ export interface ApiCartCart extends Schema.CollectionType {
       'api::product.product'
     >;
     status: Attribute.Enumeration<['waiting', 'delivered', 'delivering']>;
-    cartitems: Attribute.Relation<
+    cart_items: Attribute.Relation<
       'api::cart.cart',
       'oneToMany',
       'api::cart-item.cart-item'

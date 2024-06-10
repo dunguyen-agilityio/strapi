@@ -25,7 +25,7 @@
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::cart.cart",
-      "inversedBy": "cartitems"
+      "inversedBy": "cart_items"
     }
   }
 }
