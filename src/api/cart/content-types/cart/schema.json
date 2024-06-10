@@ -4,7 +4,8 @@
   "info": {
     "singularName": "cart",
     "pluralName": "carts",
-    "displayName": "Cart"
+    "displayName": "Cart",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -30,6 +31,12 @@
         "delivered",
         "delivering"
       ]
+    },
+    "cartitems": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::cart-item.cart-item",
+      "mappedBy": "cart"
     }
   }
 }

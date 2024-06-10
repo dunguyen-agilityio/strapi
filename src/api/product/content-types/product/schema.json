@@ -69,6 +69,12 @@
       "relation": "manyToOne",
       "target": "api::wish-list.wish-list",
       "inversedBy": "products"
+    },
+    "cart_item": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::cart-item.cart-item",
+      "mappedBy": "product"
     }
   }
 }
