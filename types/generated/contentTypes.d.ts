@@ -946,7 +946,9 @@ export interface ApiProductProduct extends Schema.CollectionType {
         'SmartWatch',
         'Shoes',
         'Clothes',
-        'NewArrival'
+        'NewArrival',
+        'FashionAccessories',
+        'MenBags'
       ]
     >;
     wish_list: Attribute.Relation<
