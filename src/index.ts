@@ -1,18 +1,18 @@
-import { faker } from "@faker-js/faker";
+// import { faker } from "@faker-js/faker";
 
-const CATEGORIES = [
-  "Computer",
-  "Camera",
-  "Phone",
-  "GamePad",
-  "HeadPhone",
-  "SmartWatch",
-  "Shoes",
-  "Clothes",
-  "NewArrival",
-  "FashionAccessories",
-  "MenBags",
-];
+// const CATEGORIES = [
+//   "Computer",
+//   "Camera",
+//   "Phone",
+//   "GamePad",
+//   "HeadPhone",
+//   "SmartWatch",
+//   "Shoes",
+//   "Clothes",
+//   // "NewArrival",
+//   "FashionAccessories",
+//   "MenBags",
+// ];
 
 export default {
   /**
