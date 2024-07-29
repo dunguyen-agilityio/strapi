@@ -849,7 +849,7 @@ export interface ApiCartItemCartItem extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    count: Attribute.Integer;
+    quantity: Attribute.Integer;
     product: Attribute.Relation<
       'api::cart-item.cart-item',
       'oneToOne',
