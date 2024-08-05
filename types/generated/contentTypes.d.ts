@@ -913,6 +913,96 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
 }
 
+export interface ApiImageImage extends Schema.CollectionType {
+  collectionName: 'images';
+  info: {
+    singularName: 'image';
+    pluralName: 'images';
+    displayName: 'Image';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    url: Attribute.String;
+    inventory: Attribute.Relation<
+      'api::image.image',
+      'manyToOne',
+      'api::inventory.inventory'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::image.image',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::image.image',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiInventoryInventory extends Schema.CollectionType {
+  collectionName: 'inventories';
+  info: {
+    singularName: 'inventory';
+    pluralName: 'inventories';
+    displayName: 'Inventory';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    category: Attribute.String;
+    sellingPrice: Attribute.Decimal;
+    costPrice: Attribute.Float;
+    quantity: Attribute.Integer;
+    orderType: Attribute.String;
+    valueDiscount: Attribute.Float;
+    valueExpiryDate: Attribute.String;
+    description: Attribute.Text;
+    policySwitch: Attribute.Boolean;
+    dateAdded: Attribute.String;
+    timeAdded: Attribute.String;
+    image: Attribute.Relation<
+      'api::inventory.inventory',
+      'oneToOne',
+      'api::image.image'
+    >;
+    images: Attribute.Relation<
+      'api::inventory.inventory',
+      'oneToMany',
+      'api::image.image'
+    >;
+    status: Attribute.Enumeration<['draft', 'published', 'unpublished']>;
+    discountType: Attribute.Enumeration<['free', 'discount']>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::inventory.inventory',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::inventory.inventory',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiProductProduct extends Schema.CollectionType {
   collectionName: 'products';
   info: {
@@ -1077,6 +1167,8 @@ declare module '@strapi/types' {
       'api::cart.cart': ApiCartCart;
       'api::cart-item.cart-item': ApiCartItemCartItem;
       'api::category.category': ApiCategoryCategory;
+      'api::image.image': ApiImageImage;
+      'api::inventory.inventory': ApiInventoryInventory;
       'api::product.product': ApiProductProduct;
       'api::size.size': ApiSizeSize;
       'api::wish-list.wish-list': ApiWishListWishList;

@@ -14,6 +14,9 @@
 //   "MenBags",
 // ];
 
+// const S = ['draft',
+//   'published',
+//   'unpublished']
 export default {
   /**
    * An asynchronous register function that runs before
@@ -32,14 +35,21 @@ export default {
    */
   bootstrap(/*{ strapi }*/) {
     // for (let index = 0; index < 500; index++) {
-    //   strapi.entityService.create("api::product.product", {
+    //   strapi.entityService.create("api::inventory.inventory", {
     //     data: {
     //       name: faker.commerce.productName(),
-    //       price: faker.number.float({ max: 200, min: 10 }),
+    //       sellingPrice: faker.number.float({ max: 200, min: 10 }),
+    //       costPrice: faker.number.float({ max: 200, min: 10 }),
     //       quantity: faker.number.int({ max: 200, min: 10 }),
     //       description: faker.commerce.productDescription(),
-    //       discount: faker.number.int({ max: 6, min: 0 }),
+    //       valueDiscount: faker.number.int({ max: 6, min: 0 }),
     //       category: CATEGORIES[Math.floor(Math.random() * 10)],
+    //       orderType:'standard',
+    //       valueExpiryDate: faker.date.soon().toUTCString(),
+    //       dateAdded: faker.date.past().toUTCString(),
+    //       timeAdded: faker.date.past().toTimeString(),
+    //       status: S[Math.floor((Math.random() * 10)/3)],
+    //       discountType:'free'
     //     },
     //   });
     // }

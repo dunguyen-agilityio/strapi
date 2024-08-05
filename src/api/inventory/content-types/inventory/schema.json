@@ -1,0 +1,78 @@
+{
+  "kind": "collectionType",
+  "collectionName": "inventories",
+  "info": {
+    "singularName": "inventory",
+    "pluralName": "inventories",
+    "displayName": "Inventory",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "sellingPrice": {
+      "type": "decimal"
+    },
+    "costPrice": {
+      "type": "float"
+    },
+    "quantity": {
+      "type": "integer"
+    },
+    "orderType": {
+      "type": "string"
+    },
+    "valueDiscount": {
+      "type": "float"
+    },
+    "valueExpiryDate": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "policySwitch": {
+      "type": "boolean"
+    },
+    "dateAdded": {
+      "type": "string"
+    },
+    "timeAdded": {
+      "type": "string"
+    },
+    "image": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::image.image"
+    },
+    "images": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::image.image",
+      "mappedBy": "inventory"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "draft",
+        "published",
+        "unpublished"
+      ]
+    },
+    "discountType": {
+      "type": "enumeration",
+      "enum": [
+        "free",
+        "discount"
+      ]
+    }
+  }
+}
