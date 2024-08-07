@@ -4,7 +4,8 @@
   "info": {
     "singularName": "image",
     "pluralName": "images",
-    "displayName": "Image"
+    "displayName": "Photo",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -21,7 +22,13 @@
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::inventory.inventory",
-      "inversedBy": "images"
+      "inversedBy": "additionalImages"
+    },
+    "inventoryy": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::inventory.inventory",
+      "mappedBy": "image"
     }
   }
 }

@@ -918,7 +918,8 @@ export interface ApiImageImage extends Schema.CollectionType {
   info: {
     singularName: 'image';
     pluralName: 'images';
-    displayName: 'Image';
+    displayName: 'Photo';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -929,6 +930,11 @@ export interface ApiImageImage extends Schema.CollectionType {
     inventory: Attribute.Relation<
       'api::image.image',
       'manyToOne',
+      'api::inventory.inventory'
+    >;
+    inventoryy: Attribute.Relation<
+      'api::image.image',
+      'oneToOne',
       'api::inventory.inventory'
     >;
     createdAt: Attribute.DateTime;
@@ -971,20 +977,18 @@ export interface ApiInventoryInventory extends Schema.CollectionType {
     valueExpiryDate: Attribute.String;
     description: Attribute.Text;
     policySwitch: Attribute.Boolean;
-    dateAdded: Attribute.String;
-    timeAdded: Attribute.String;
-    image: Attribute.Relation<
-      'api::inventory.inventory',
-      'oneToOne',
-      'api::image.image'
-    >;
-    images: Attribute.Relation<
+    additionalImages: Attribute.Relation<
       'api::inventory.inventory',
       'oneToMany',
       'api::image.image'
     >;
     status: Attribute.Enumeration<['draft', 'published', 'unpublished']>;
     discountType: Attribute.Enumeration<['free', 'discount']>;
+    image: Attribute.Relation<
+      'api::inventory.inventory',
+      'oneToOne',
+      'api::image.image'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

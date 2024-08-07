@@ -42,18 +42,7 @@
     "policySwitch": {
       "type": "boolean"
     },
-    "dateAdded": {
-      "type": "string"
-    },
-    "timeAdded": {
-      "type": "string"
-    },
-    "image": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::image.image"
-    },
-    "images": {
+    "additionalImages": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::image.image",
@@ -73,6 +62,12 @@
         "free",
         "discount"
       ]
+    },
+    "image": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::image.image",
+      "inversedBy": "inventoryy"
     }
   }
 }
