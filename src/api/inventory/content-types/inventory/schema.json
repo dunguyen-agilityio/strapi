@@ -12,7 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "name": {
+    "productName": {
       "type": "string"
     },
     "category": {
@@ -30,10 +30,10 @@
     "orderType": {
       "type": "string"
     },
-    "valueDiscount": {
+    "discountValue": {
       "type": "float"
     },
-    "valueExpiryDate": {
+    "expiryDate": {
       "type": "string"
     },
     "description": {
@@ -68,6 +68,12 @@
       "relation": "oneToOne",
       "target": "api::image.image",
       "inversedBy": "inventoryy"
+    },
+    "discountSwitch": {
+      "type": "boolean"
+    },
+    "expirySwitch": {
+      "type": "boolean"
     }
   }
 }

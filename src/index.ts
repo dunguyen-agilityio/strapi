@@ -1,22 +1,22 @@
-// import { faker } from "@faker-js/faker";
+import { faker } from "@faker-js/faker";
 
-// const CATEGORIES = [
-//   "Computer",
-//   "Camera",
-//   "Phone",
-//   "GamePad",
-//   "HeadPhone",
-//   "SmartWatch",
-//   "Shoes",
-//   "Clothes",
-//   // "NewArrival",
-//   "FashionAccessories",
-//   "MenBags",
-// ];
+const CATEGORIES = [
+  // "Computer",
+  // "Camera",
+  // "Phone",
+  // "GamePad",
+  // "HeadPhone",
+  // "SmartWatch",
+  // "Shoes",
+  // "Clothes",
+  // "NewArrival",
+  // "FashionAccessories",
+  // "MenBags",
+  "Fashion",
+  "Gadgets",
+];
 
-// const S = ['draft',
-//   'published',
-//   'unpublished']
+const S = ["draft", "published", "unpublished"];
 export default {
   /**
    * An asynchronous register function that runs before
@@ -34,22 +34,23 @@ export default {
    * run jobs, or perform some special logic.
    */
   bootstrap(/*{ strapi }*/) {
-    // for (let index = 0; index < 500; index++) {
+    // for (let index = 0; index < 50; index++) {
     //   strapi.entityService.create("api::inventory.inventory", {
     //     data: {
-    //       name: faker.commerce.productName(),
+    //       productName: faker.commerce.productName(),
     //       sellingPrice: faker.number.float({ max: 200, min: 10 }),
     //       costPrice: faker.number.float({ max: 200, min: 10 }),
     //       quantity: faker.number.int({ max: 200, min: 10 }),
     //       description: faker.commerce.productDescription(),
-    //       valueDiscount: faker.number.int({ max: 6, min: 0 }),
-    //       category: CATEGORIES[Math.floor(Math.random() * 10)],
-    //       orderType:'standard',
-    //       valueExpiryDate: faker.date.soon().toUTCString(),
-    //       dateAdded: faker.date.past().toUTCString(),
-    //       timeAdded: faker.date.past().toTimeString(),
-    //       status: S[Math.floor((Math.random() * 10)/3)],
-    //       discountType:'free'
+    //       discountValue: faker.number.int({ max: 6, min: 0 }),
+    //       category: CATEGORIES[faker.number.int({ max: 1, min: 0 })],
+    //       orderType: "standard",
+    //       expiryDate: faker.date.soon().toUTCString(),
+    //       status: S[faker.number.int({ max: 2, min: 0 })],
+    //       discountType: "free",
+    //       policySwitch: faker.number.int({ max: 10, min: 3 }) > 5,
+    //       expirySwitch: faker.number.int({ max: 10, min: 3 }) > 5,
+    //       discountSwitch: faker.number.int({ max: 10, min: 3 }) > 5,
     //     },
     //   });
     // }

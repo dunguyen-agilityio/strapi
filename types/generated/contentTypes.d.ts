@@ -967,14 +967,14 @@ export interface ApiInventoryInventory extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    name: Attribute.String;
+    productName: Attribute.String;
     category: Attribute.String;
     sellingPrice: Attribute.Decimal;
     costPrice: Attribute.Float;
     quantity: Attribute.Integer;
     orderType: Attribute.String;
-    valueDiscount: Attribute.Float;
-    valueExpiryDate: Attribute.String;
+    discountValue: Attribute.Float;
+    expiryDate: Attribute.String;
     description: Attribute.Text;
     policySwitch: Attribute.Boolean;
     additionalImages: Attribute.Relation<
@@ -989,6 +989,8 @@ export interface ApiInventoryInventory extends Schema.CollectionType {
       'oneToOne',
       'api::image.image'
     >;
+    discountSwitch: Attribute.Boolean;
+    expirySwitch: Attribute.Boolean;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
